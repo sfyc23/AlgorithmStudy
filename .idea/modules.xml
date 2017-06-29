@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CalcByKotlin.iml" filepath="$PROJECT_DIR$/CalcByKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AlgorithmStudy.iml" filepath="$PROJECT_DIR$/AlgorithmStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithmByJava/algorithmByJava.iml" filepath="$PROJECT_DIR$/algorithmByJava/algorithmByJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithmBykotlin/algorithmBykotlin.iml" filepath="$PROJECT_DIR$/algorithmBykotlin/algorithmBykotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
