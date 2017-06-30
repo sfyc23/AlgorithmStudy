@@ -1,6 +1,5 @@
-【程序 9】 题目：一个数如果恰好等于它的因子之和，这个数就称为 "完美数 "。例如 6=1＋2＋3 编程找出 1000 以内的所有完数。
-
-
+【程序 9】 题目：一个数如果恰好等于它的因子之和，这个数就称为 "完美数 "。  
+例如 6=1＋2＋3 编程找出 1000 以内的所有完数。
 
 用 Java 实现：
 
@@ -8,7 +7,7 @@
 public static void main(String[] args) {
     for (int i = 1; i < 1000; i++) {
         if (isPerfectNumber(i)) {
-            System.out.println(i + " 为完美数");
+            System.out.print(i + " 为完美数\t");
         }
     }
 }
@@ -29,15 +28,13 @@ public static boolean isPerfectNumber(long n) {
 }
 ```
 
-
-
 用 Kotlin 实现：
 
 ```
 fun main(args: Array<String>) {
     for (i in 1..999) {
         if (i.isPerfectNumber()) {
-            println("$i 为完美数")
+            println("$i 为完美数\t")
         }
     }
 }
@@ -59,6 +56,15 @@ fun Int.isPerfectNumber(): Boolean {
     }
     return false
 }
+```
+
+输出结果为：
+
+```
+6 为完美数	
+28 为完美数	
+496 为完美数	
+
 ```
 
 

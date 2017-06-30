@@ -56,5 +56,11 @@ fun getOne(length: Int): Long {
 }
 ```
 
+输出结果：
+
+```
+2468
+```
+
 
 

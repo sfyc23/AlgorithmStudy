@@ -4,14 +4,12 @@
 
 或者使用 Array.sort\(\) 进行排序，Array.toString 输出。
 
-
-
 用 Java 实现：
 
 ```
 public static void main(String[] args) {
-    sort(6, 5, 4);
-    arraySort(6, 5, 4);
+//    sort(6, 4, 3);
+    arraySort(6, 4, 3);
 }
 
 /**
@@ -49,8 +47,6 @@ public static void arraySort(int x, int y, int z) {
 }
 ```
 
-
-
 用 Kotlin 实现：
 
 ```
@@ -62,6 +58,12 @@ fun sort(x: Int, y: Int, z: Int) {
     var list = listOf(x, y, z)
     println(list.sorted());
 }
+```
+
+输出结果：
+
+```
+[3, 4, 6]
 ```
 
 
