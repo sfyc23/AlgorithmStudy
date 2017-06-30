@@ -9,18 +9,44 @@ import java.util.*
  */
 fun main(args: Array<String>) {
     var numbers = getRandomArrayInt(10);
-    printArray(numbers, "原版:")
-
     numbers.sort();
-    printArray(numbers, "排序后:")
+    println("原排序数组：${Arrays.toString(numbers)}");
 
-    var newNumbers = insertNum(numbers, 25);
-    printArray(numbers, "插入后:")
+//    var numbers = intArrayOf(8,12,14)
+    val insertInt = 25
+    insertArraySort(numbers,insertInt);
+}
 
-    numbers.sort();
-    printArray(numbers, "插入后排序:")
+/*
+*创建一个新数组，将插入值与原数组进行比较插入
+ */
+fun insertArraySort(numbers: IntArray, insertInt: Int) {
+    println("插入数值：$insertInt")
 
+    //已插入标记
+    var isInsertMarked = false
+    val newNumbers = IntArray(numbers.size + 1)
+    val lastIndex = numbers.lastIndex
 
+    numbers.forEachIndexed { i, item ->
+        if (!isInsertMarked) {
+            //当前数值少于插入值，且不是最后一位
+            if (item < insertInt ) {
+                newNumbers[i] = item
+                if (i == lastIndex) {
+                    newNumbers[i + 1] = insertInt
+                }
+            } else {
+                //在此处插入
+                isInsertMarked = true
+                newNumbers[i] = insertInt
+                newNumbers[i+1] = item
+            }
+        } else {
+            newNumbers[i+1] = item
+        }
+    }
+    println("插入后排序的数组：${Arrays.toString(newNumbers)}" )
 }
 
 fun getRandomArrayInt(count: Int = 10): IntArray {
@@ -45,11 +71,3 @@ fun printArray(intArray: IntArray, prifix: String? = null) {
     println()
 }
 
-fun insertNum(array: IntArray, num: Int): IntArray {
-    val result = IntArray(array.size + 1)
-    result[0] = num
-    for (i in 0..array.size - 1) {
-        result[i + 1] = array[i]
-    }
-    return result
-}

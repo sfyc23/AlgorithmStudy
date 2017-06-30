@@ -9,7 +9,6 @@ package com.github.sfyc23.algorithm.classicfifty;
 public class Example23 {
     public static void main(String[] args) {
         ageCalc();
-//        System.out.println();
     }
 
     public static void ageCalc(){

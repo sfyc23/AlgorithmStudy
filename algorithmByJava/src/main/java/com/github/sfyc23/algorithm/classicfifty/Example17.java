@@ -8,7 +8,6 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example17 {
     public static void main(String[] args) {
-
         int count = 1;
         for (int i = 1; i <= 9; i++) {
             count = (count + 1) * 2;

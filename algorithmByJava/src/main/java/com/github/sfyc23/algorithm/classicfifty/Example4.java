@@ -10,27 +10,20 @@ import java.util.List;
  * (1)如果这个质数恰等于n，则说明分解质因数的过程已经结束，打印出即可。
  * (2)如果n <> k，但 n 能被 k 整除，则应打印出 k 的值，并用 n 除以 k 的商,作为新的正整数n,并重复执行第一步。
  * (3)如果 n 不能被 k 整除，则用 k+1 作为 k 的值,重复执行第一步。
- *
- *
  */
 public class Example4 {
     public static void main(String[] args) {
-//        for (int i = 5; i < 1000; i++) {
-////            primeByRecursively(i, true);
-//            decPrime(i);
-//        }
-//        primeByRecursively(144, true);
-
-        decPrime(75);
-
+        primeIteration(75);
+        primeRecursion(75, true);
     }
 
     /**
      * 用递归的方法做处理
-     * @param natural
-     * @param isFirst
+     *
+     * @param natural 任意一个整数
+     * @param isFirst 用于输出
      */
-    public static void primeByRecursively(int natural, boolean isFirst) {
+    public static void primeRecursion(int natural, boolean isFirst) {
 
         if (isFirst) {
             System.out.print(natural + " = ");
@@ -38,11 +31,10 @@ public class Example4 {
         for (int i = 2, length = (int) Math.sqrt(natural); i <= length; i++) {
             if (natural % i == 0) {
                 System.out.print(i + " * ");
-                primeByRecursively(natural / i, false);
+                primeRecursion(natural / i, false);
                 return;
             }
         }
-
         //最后一行。
         if (isFirst) {
             System.out.println(natural + "为质数");
@@ -54,10 +46,11 @@ public class Example4 {
 
 
     /**
-     * 用递推的方法做处理
+     * 用迭带的方法做处理
+     *
      * @param natural
      */
-    public static void decPrime(int natural) {
+    public static void primeIteration(int natural) {
         List<Integer> primes = new ArrayList<>();
         int temp = natural;
 
@@ -73,20 +66,20 @@ public class Example4 {
         }
         primes.add(temp);
 
-        if (primes.size() > 1) {
-            System.out.print(natural + " = ");
-            for (int i = 0, lentgh = primes.size(); i < lentgh; i++) {
-                System.out.print(primes.get(i));
-                if (i != lentgh - 1) {
-                    System.out.print(" * ");
-                }
-
-            }
-        } else {
+        //用于打印 90=2*3*3*5。
+        if (primes.isEmpty() || primes.size() <= 1) {
             System.out.println(natural + " 为质数");
+            return;
+        }
+
+        System.out.print(natural + " = ");
+        for (int i = 0, lentgh = primes.size(); i < lentgh; i++) {
+            System.out.print(primes.get(i));
+            if (i != lentgh - 1) {
+                System.out.print(" * ");
+            }
         }
         System.out.println();
-
     }
 
 

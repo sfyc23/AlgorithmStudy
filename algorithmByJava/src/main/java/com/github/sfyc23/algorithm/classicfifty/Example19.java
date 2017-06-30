@@ -14,7 +14,6 @@ public class Example19 {
 
     public static void printDiamond(int num) {
         for (int i = 1; i <= num; i++) {
-
             int spaceTemp = i;
             while (num > spaceTemp) {
                 System.out.print(" ");

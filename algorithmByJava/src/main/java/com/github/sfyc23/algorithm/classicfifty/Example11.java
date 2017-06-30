@@ -13,8 +13,8 @@ public class Example11 {
                 for (int hundred = 1; hundred <= 4; hundred++)
                     if (one != ten && ten != hundred && one != hundred) {
                         count++;
-                        System.out.println(one * 100 + ten * 10 + hundred);
+//                        System.out.println(one * 100 + ten * 10 + hundred);
                     }
-        System.out.println("一共有" + count + "个数据");
+        System.out.println("一共有 " + count + " 个数据");
     }
 }

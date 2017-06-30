@@ -8,11 +8,10 @@ package com.github.sfyc23.algorithm.classicfifty
  */
 fun main(args: Array<String>) {
 
-    val array = arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6), intArrayOf(7, 7, 8))
+    val array = arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6), intArrayOf(7, 8, 9))
     var sum = 0;
-
-    for (i in 0..array.size - 1) {
-        for (j in 0..array.size - 1) {
+    for (i in array.indices) {
+        for (j in array.indices) {
             if (i == j) {
                 sum += array[i][j]
             }

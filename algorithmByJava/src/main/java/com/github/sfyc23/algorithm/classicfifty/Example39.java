@@ -8,7 +8,6 @@ package com.github.sfyc23.algorithm.classicfifty;
 public class Example39 {
     public static void main(String[] args) {
         int natural = 6;
-
         if (natural < 0) {
             throw new IllegalArgumentException("自然数必须大于0");
         }
@@ -18,14 +17,14 @@ public class Example39 {
             sum += 1.0 / i;
         }
         System.out.println("因数为：" + natural + ",sum = " + sum);
-
     }
 
-
+    //判断是不是偶数
     public static boolean isEven(int natural) {
         if (natural % 2 == 0) {
             return true;
         }
         return false;
     }
+
 }

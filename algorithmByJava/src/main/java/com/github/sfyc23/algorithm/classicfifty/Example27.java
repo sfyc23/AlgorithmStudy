@@ -11,8 +11,6 @@ public class Example27 {
                 System.out.println(i + " 是素数");
             }
         }
-
-
     }
 
     public static boolean isPrimeNumber(int natural) {

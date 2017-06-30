@@ -8,16 +8,17 @@ package com.github.sfyc23.algorithm.classicfifty
  * 兔子的规律为斐波纳契数列 1,1,2,3,5,8,13,21....
  */
 fun main(args: Array<String>) {
-    recursive(7)
-    println(recursively(8))
+    fibonacciIteration(7)
+    println(fibonacciRecursion(8))
+
 }
 
 
 
-fun recursively(count: Int) :Int = when{
+fun fibonacciRecursion(count: Int) :Int = when{
     count < 0 -> throw IllegalArgumentException(" the parameter is valid!")
     count in 0..2 ->  1
-    else ->  recursively(count - 1) + recursively(count - 2)
+    else ->  fibonacciRecursion(count - 1) + fibonacciRecursion(count - 2)
 }
 
 
@@ -25,7 +26,7 @@ fun recursively(count: Int) :Int = when{
  * 递推实现方式
  * @param count
  */
-fun recursive(count: Int): Int = when{
+fun fibonacciIteration(count: Int): Int = when{
     count < 0 -> throw IllegalArgumentException(" the parameter is valid!")
     count in 0..2 ->  1
     else -> {
@@ -41,5 +42,17 @@ fun recursive(count: Int): Int = when{
         num
     }
 }
+
+fun fibonacciRecursionTail(n: Int, curSum: Int =1, preSum: Int =1 ): Int {
+    var curSum = curSum
+    if (n < 2) {
+        return curSum
+    } else {
+        curSum += preSum
+        return fibonacciRecursionTail(n - 1, preSum, curSum)
+    }
+}
+
+
 
 

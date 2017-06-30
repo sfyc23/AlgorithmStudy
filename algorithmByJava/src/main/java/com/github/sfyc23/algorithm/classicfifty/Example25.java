@@ -6,24 +6,27 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example25 {
     public static void main(String[] args) {
-
-//        System.out.println(isPalindromeNumber(12321));
         //计算所有5位数的回文数
-        for (int i = 10000; i <= 99999; i++) {
-            if(isPalindromeNumber(i)){
-            System.out.print(i+"\t");
-            }
-        }
+//        for (int i = 10000; i <= 99999; i++) {
+//            if(isPalindromeNumber(i)){
+//            System.out.print(i+"\t");
+//            }
+//        }
+
+        isPalindromeNumber(12321);
+
     }
 
-    public static boolean isPalindromeNumber(long l) {
-        char[] c = String.valueOf(l).toCharArray();
-        int len = c.length / 2;
-        for (int i = 0; i < len; i++) {
-            if (c[i] != c[c.length - 1 - i]) {
+    public static boolean isPalindromeNumber(long natural) {
+        char[] c = String.valueOf(natural).toCharArray();
+        int length = c.length;
+
+        for (int i = 0, len = length / 2; i < len; i++) {
+            if (c[i] != c[length - 1 - i]) {
                 return false;
             }
         }
+        System.out.print(natural + " 是一个回文数");
         return true;
     }
 

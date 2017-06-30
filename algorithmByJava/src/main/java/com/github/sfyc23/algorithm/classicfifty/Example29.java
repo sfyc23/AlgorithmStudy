@@ -8,7 +8,7 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example29 {
     public static void main(String[] args) {
-        int[][] array = {{1, 2, 3}, {4, 5, 6}, {7, 7, 8}};
+        int[][] array = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int sum = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -18,6 +18,5 @@ public class Example29 {
             }
         }
         System.out.println(sum);
-
     }
 }

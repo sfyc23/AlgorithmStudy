@@ -1,5 +1,6 @@
 package com.github.sfyc23.algorithm.classicfifty;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -9,58 +10,47 @@ import java.util.Random;
  */
 public class Example30 {
     public static void main(String[] args) {
-
-        int[] numbers = getRandomInt(10);
-        System.out.print("当前数组：\t");
-        printlnArray(numbers);
-
-
-        bubbleSort(numbers);
-        System.out.print("排序后的数组：\t");
-        printlnArray(numbers);
+        //获取一个随机数组并排序
+        Integer[] numbers = getRandomIntArray(10);
+        Arrays.sort(numbers);
+        System.out.println("原排序数组：" + Arrays.toString(numbers));
 
         int insertInt = 25;
+        insertMethods0(numbers, insertInt);
+//        insertMethods1(numbers, insertInt);
+    }
+
+    /*
+    *创建一个新数组，将插入值与原数组进行比较插入
+     */
+    public static void insertMethods0(Integer[] numbers, int insertInt) {
         System.out.println("插入数值：" + insertInt);
 
-        int[] newNumbers = insertNum(numbers, insertInt);
-        System.out.print("插入后的数组：\t");
-        printlnArray(newNumbers);
-
-
-        bubbleSort(newNumbers);
-        System.out.print("插入后排序的数组：\t");
-        printlnArray(newNumbers);
-
-
-    }
-
-    public static int[] insertNum(int[] array, int num) {
-
-        int[] result = new int[array.length + 1];
-        result[0] = num;
-        for (int i = 0, length = array.length; i < length; i++) {
-            result[i + 1] = array[i];
-        }
-        return result;
-    }
-
-    public static void bubbleSort(int[] numbers) {
-        int temp = 0;
-        int size = numbers.length;
-        for (int i = 0, il = size - 1; i < il; i++) {
-            for (int j = 0, jl = size - 1 - i; j < jl; j++) {
-                //交换两数位置
-                if (numbers[j] > numbers[j + 1]) {
-                    temp = numbers[j];
-                    numbers[j] = numbers[j + 1];
-                    numbers[j + 1] = temp;
+        //已插入标记
+        boolean isInsertMarked = false;
+        Integer[] newNumbers = new Integer[numbers.length + 1];
+        for (int i = 0, length = numbers.length; i < length; i++) {
+            if (!isInsertMarked) {
+                if (numbers[i] < insertInt) {
+                    newNumbers[i] = numbers[i];
+                    if (i == length - 1) {
+                        newNumbers[i + 1] = insertInt;
+                    }
+                } else {
+                    //在此处插入
+                    isInsertMarked = true;
+                    newNumbers[i] = insertInt;
+                    newNumbers[i + 1] = numbers[i];
                 }
+            } else {
+                newNumbers[i + 1] = numbers[i];
             }
         }
+        System.out.println("插入后排序的数组：\t" + Arrays.toString(newNumbers));
     }
 
-    public static int[] getRandomInt(int count) {
-        int[] numbers = new int[count];
+    public static Integer[] getRandomIntArray(int count) {
+        Integer[] numbers = new Integer[count];
         Random rd = new Random();
         for (int i = 0, length = numbers.length; i < length; i++) {
             numbers[i] = rd.nextInt(100);
@@ -68,10 +58,28 @@ public class Example30 {
         return numbers;
     }
 
-    public static void printlnArray(int[] numbers) {
-        for (int number : numbers) {
-            System.out.print(number + "\t");
+
+    /**
+     * 创建一个新数组，将插入值放在第0位，其他数据copy,然后重新进行排序
+     *
+     * @param numbers
+     * @param insertInt
+     */
+    public static void insertMethods1(Integer[] numbers, int insertInt) {
+        System.out.println("插入数值：" + insertInt);
+
+        //创建一个新数组，将值插入到第 0 项，其他数值 copy
+        Integer[] newNumbers = new Integer[numbers.length + 1];
+        newNumbers[0] = insertInt;
+        for (int i = 0, length = numbers.length; i < length; i++) {
+            newNumbers[i + 1] = numbers[i];
         }
-        System.out.println();
+
+        System.out.println("插入后的数组：\t" + Arrays.toString(newNumbers));
+
+        Arrays.sort(newNumbers);
+        System.out.println("插入后排序的数组：\t" + Arrays.toString(newNumbers));
     }
+
+
 }

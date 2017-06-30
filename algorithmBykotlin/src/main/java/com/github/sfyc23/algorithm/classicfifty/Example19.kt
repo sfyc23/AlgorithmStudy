@@ -12,6 +12,7 @@ fun main(args: Array<String>) {
 }
 
 fun printDiamond(num: Int) {
+    //前 N 项
     for (i in 1..num) {
         var spaceCount = num - i;
         for (temp in 1..spaceCount){
@@ -23,7 +24,7 @@ fun printDiamond(num: Int) {
         }
         println()
     }
-
+    //后 N-1 项
     for (i in 1..num - 1) {
         for (temp in 1..i){
             print(" ")

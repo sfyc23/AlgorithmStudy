@@ -14,7 +14,6 @@ public class Example40 {
         char[] ca = s.toCharArray();
         Arrays.sort(ca);
         String newS = String.valueOf(ca);
-
         System.out.println("排序后:" + newS);
     }
 }

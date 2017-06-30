@@ -10,19 +10,12 @@ import java.util.Random;
  */
 public class Example34 {
     public static void main(String[] args) {
-        System.out.println();
-
-        Integer[] numbers = getRandomArrayInt(3);
-//        printArray("正序：\t", numbers);
-
-//        bubbleReverse(numbers);
-
-
-        //自带函数排序
+//        Integer[] numbers = getRandomArrayInt(3);
+        Integer[] numbers = new Integer[]{5, 8, 4};
+        System.out.println("排序前：" + Arrays.toString(numbers));
+        //自带函数倒排序
         Arrays.sort(numbers, Collections.reverseOrder());
-
-        System.out.println(Arrays.toString(numbers));
-
+        System.out.println("按大小顺序：" + Arrays.toString(numbers));
     }
 
     public static Integer[] getRandomArrayInt(int count) {

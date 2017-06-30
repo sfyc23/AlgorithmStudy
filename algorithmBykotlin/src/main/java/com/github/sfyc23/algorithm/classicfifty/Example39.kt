@@ -10,7 +10,6 @@ fun main(args: Array<String>) {
     if (natural < 0) {
         throw IllegalArgumentException("自然数必须大于0")
     }
-
     var sum = 0.0
     var i = if (natural.isEven()) 2.0 else 1.0
 
@@ -19,15 +18,10 @@ fun main(args: Array<String>) {
         i += 2.0
     }
     println("因数为：$natural,sum = $sum")
-
 }
 
 //int 扩展函数
-fun Int.isEven(): Boolean {
-    if (this % 2 == 0) {
-        return true
-    }
-    return false
-}
+fun Int.isEven() = if (this % 2 == 0) true else false
+
 
 

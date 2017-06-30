@@ -1,5 +1,7 @@
 package com.github.sfyc23.algorithm.classicfifty;
 
+import java.util.Arrays;
+
 /**
  * Author :leilei on 2017/6/28 01:50
  * 【程序15】  题目：输入三个整数x,y,z，请把这三个数由小到大输出。
@@ -8,9 +10,13 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example15 {
     public static void main(String[] args) {
-        sort(6, 5, 4);
+        sort(6, 4, 3);
+        arraySort(6, 4, 3);
     }
 
+    /**
+     * 脑残性排序并输出
+     */
     public static void sort(int x, int y, int z) {
         int temp = 0;
         if (x > y) {
@@ -31,6 +37,15 @@ public class Example15 {
             z = temp;
         }
         System.out.println("x = " + x + ", y = " + y + " , z = " + z);
-
     }
+
+    /**
+     * 使用Array.sort();并用Array.toString()输出
+     */
+    public static void arraySort(int x, int y, int z) {
+        Integer[] is = new Integer[]{x, y, z};
+        Arrays.sort(is);
+        System.out.println(Arrays.toString(is));
+    }
+
 }

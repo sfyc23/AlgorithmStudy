@@ -12,7 +12,13 @@ public class Example24 {
     public static void calcNatural(long natural) {
         System.out.println("整数为：" + natural);
         String ns = String.valueOf(natural);
-        System.out.println("它是 " + ns.length() + " 位数");
+        int length = ns.length();
+        if (length >= 5) {
+            System.out.println("请重新输入");
+            return;
+        }
+        System.out.println("它是 " + length + " 位数");
+
         for (int i = ns.length() - 1; i >= 0; i--) {
             System.out.print(ns.charAt(i) + "\t");
         }

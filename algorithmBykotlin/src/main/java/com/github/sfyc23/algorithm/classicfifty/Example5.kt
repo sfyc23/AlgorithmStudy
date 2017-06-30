@@ -9,21 +9,21 @@ import java.util.*
  * 1.程序分析：(a> b)?a:b这是条件运算符的基本例子。
  */
 fun main(args: Array<String>) {
-    var scores = getScore(20);
+    var scores = getRandomList(10);
     for (score in scores) {
         when {
             score >= 90 -> println("core:$score , grade : A")
-            score > 90 -> println("core:$score , grade : B")
+            score in 60..89 -> println("core:$score , grade : B")
             else -> println("core:$score , grade : C")
         }
     }
 }
 
-private fun getScore(num: Int): List<Int> {
+private fun getRandomList(count: Int = 10, range: Int = 100): List<Int> {
     val scores = ArrayList<Int>()
     val rd = Random()
-    for (i in 1..num) {
-        scores.add(rd.nextInt(100))
+    for (i in 1..count) {
+        scores.add(rd.nextInt(range))
     }
     return scores
 }

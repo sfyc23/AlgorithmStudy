@@ -8,22 +8,26 @@ package com.github.sfyc23.algorithm.classicfifty;
 public class Example21 {
     public static void main(String[] args) {
         System.out.println(sumFactorial(20));
-
     }
 
     public static long sumFactorial(int count) {
         long sum = 0L;
         for (int i = 1; i <= count; i++) {
-            sum += factorial(i);
+            sum += factorialRecursionTail(i);
         }
         return sum;
     }
 
-    public static long factorial(int natural) {
-        if (natural <= 1L) {
-            return 1L;
-        } else {
-            return natural * factorial(natural - 1);
+    //阶乘--尾递归
+    public static int factorialRecursionTail(int natural) {
+        return factorialRecursionTail(natural, 1);
+    }
+
+    private static int factorialRecursionTail(int natural, int sum) {
+        if (natural < 2) {
+            return sum;
         }
+        sum = sum * natural;
+        return factorialRecursionTail(natural - 1,sum);
     }
 }

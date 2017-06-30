@@ -10,10 +10,19 @@ import java.util.List;
  */
 public class Example2 {
     public static void main(String[] args) {
-        System.out.println(primeRange(100, 200));
+        System.out.println(primeRange(101, 200));
     }
 
+    /**
+     * 素数区间
+     * @param start 开始
+     * @param end   结束
+     * @return
+     */
     public static List<Integer> primeRange(int start, int end) {
+        if (start < 0 || end <= 0 || start > end) {
+            throw new IllegalArgumentException("请输入正确的数值");
+        }
         List<Integer> pns = new ArrayList<>();
         for (int i = start; i <= end; i++) {
             if (isPrimeNumber(i)) {
@@ -23,6 +32,11 @@ public class Example2 {
         return pns;
     }
 
+    /**
+     * 判断一个数是否为素数
+     * @param natural
+     * @return true 素数 ，false 不是素数
+     */
     public static boolean isPrimeNumber(int natural) {
         int sqlt = (int) Math.sqrt(natural);
         for (int i = 2; i <= sqlt; i++) {
@@ -32,8 +46,6 @@ public class Example2 {
         }
         return true;
     }
-
-
 
 
 }

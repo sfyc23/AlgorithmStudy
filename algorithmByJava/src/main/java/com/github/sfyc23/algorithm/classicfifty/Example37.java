@@ -10,12 +10,17 @@ import java.util.List;
  */
 public class Example37 {
     public static void main(String[] args) {
-        System.out.println("last live index:" + josephus(8, 3));
-        System.out.println("last live index:" + recursion(8, 3));
+        int peopleNum = 8;
+        int checkIndex = 3;
+
+        int liveIndex = josephusIteration(peopleNum, checkIndex);
+//        int liveIndex = josephusRecursion(peopleNum, checkIndex);
+        System.out.println(peopleNum + "人围圈，报数为： " + checkIndex + " , 最后存活的人的位置是： " + liveIndex);
     }
-
-
-    public static int josephus(int peopleNum, int node) {
+    /*
+   迭代删除
+     */
+    public static int josephusIteration(int peopleNum, int node) {
         if (peopleNum <= 0 || node <= 0) {
             throw new IllegalArgumentException("人数，报名必须大于0");
         }
@@ -25,8 +30,7 @@ public class Example37 {
         }
         // 每次计数开始的索引
         int romoveIndex = 0;
-
-        //循环删除
+        //循环杀人
         while (true) {
             romoveIndex = (romoveIndex + node - 1) % list.size();
             list.remove(romoveIndex);
@@ -35,7 +39,6 @@ public class Example37 {
                 return list.get(0);
             }
         }
-
     }
 
     /**
@@ -43,7 +46,7 @@ public class Example37 {
      * (1)、f[1]=0;
      * (2)、f[i]=(f[i-1]+m)%i; (i>1)
      */
-    public static int recursion(int peopleNum, int node) {
+    public static int josephusRecursion(int peopleNum, int node) {
         if (peopleNum <= 0 || node <= 0) {
             throw new IllegalArgumentException("人数，报名必须大于0");
         }

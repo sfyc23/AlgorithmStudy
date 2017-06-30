@@ -27,13 +27,3 @@ fun Int.isPrimeNumber(): Boolean {
     }
     return true
 }
-
-//fun isPrimeNumber(natural: Int): Boolean {
-//    val sqlt = Math.sqrt(natural.toDouble()).toInt()
-//    for (i in 2..sqlt) {
-//        if (natural % i == 0) {
-//            return false
-//        }
-//    }
-//    return true
-//}

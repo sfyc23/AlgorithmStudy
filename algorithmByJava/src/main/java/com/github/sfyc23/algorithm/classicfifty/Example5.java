@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class Example5 {
     public static void main(String[] args) {
-        List<Integer> scores = getScore(20);
+        List<Integer> scores = getRandomScore(20);
         for (int score : scores) {
             if (score >= 90) {
                 System.out.println("score:" + score + " , grade : A");
@@ -24,7 +24,12 @@ public class Example5 {
         }
     }
 
-    private static List<Integer> getScore(int num) {
+    /**
+     * 获取随机分数
+     * @param num 数量
+     * @return
+     */
+    private static List<Integer> getRandomScore(int num) {
         List<Integer> scores = new ArrayList<>();
         Random rd = new Random();
         for (int i = 0; i < num; i++) {

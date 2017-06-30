@@ -1,5 +1,6 @@
 package com.github.sfyc23.algorithm.classicfifty;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -9,11 +10,16 @@ import java.util.Random;
  */
 public class Example31 {
     public static void main(String[] args) {
+//        int[] numbers = getRandomArrayInt(10);
+        Integer[] numbers = new Integer[]{1, 5, 3, 2, 9};
+        System.out.println("当前" + Arrays.toString(numbers));
 
-        int[] numbers = getRandomArrayInt(10);
-
-        printArray("当前：\t", numbers);
-        reverseArray("逆序输出：\t", numbers);
+        //遍迭数组
+        System.out.print("输出：\t");
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + "\t");
+        }
+        System.out.println();
 
     }
 
@@ -26,13 +32,6 @@ public class Example31 {
         return numbers;
     }
 
-    public static void printArray(String prifix, int[] numbers) {
-        System.out.print(prifix);
-        for (int number : numbers) {
-            System.out.print(number + "\t");
-        }
-        System.out.println();
-    }
 
     public static void reverseArray(String prifix, int[] numbers) {
         System.out.print(prifix);

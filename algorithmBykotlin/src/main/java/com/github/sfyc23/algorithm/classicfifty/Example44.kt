@@ -12,9 +12,11 @@ fun main(args: Array<String>) {
             return
         }
     }
-    println("2到10000的偶数都可以")
+    println("2到10000的偶数都满足等于两个素数之和")
 }
-
+/**
+* 证明偶数 = 素数 + 素数
+*/
 fun isEvenEqualsPrimeAdd(even: Int): Boolean {
     for (j in 1..even - 1) {
         //如果是素数

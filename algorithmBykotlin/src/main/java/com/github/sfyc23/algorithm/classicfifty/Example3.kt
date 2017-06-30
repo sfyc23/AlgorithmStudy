@@ -15,21 +15,24 @@ fun main(args: Array<String>) {
 fun getNarcissistic(start: Int, end: Int): List<Int> {
     val nrs = ArrayList<Int>()
     for (i in start..end) {
-        if (isNarcissistic(i)) {
+        if (i.isNarcissistic()) {
             nrs.add(i)
         }
     }
     return nrs
 }
 
-fun isNarcissistic(natural: Int): Boolean {
-    val hundred = natural / 10 / 10 % 10
-    val ten = natural / 10 % 10
-    val digit = natural % 10
+/**
+ * 扩展函数，判断是否为水仙花数。
+ */
+fun Int.isNarcissistic(): Boolean {
+    val hundred = this / 10 / 10 % 10
+    val ten = this / 10 % 10
+    val digit = this % 10
 
     val num = hundred * hundred * hundred + ten * ten * ten + digit * digit * digit
 
-    if (num == natural) {
+    if (num == this) {
         return true
     }
     return false

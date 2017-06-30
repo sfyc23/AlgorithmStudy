@@ -9,10 +9,7 @@ public class Example7 {
     public final static String SS = "Jack quietly moved up front and seized the big ball of wax. (47 letters) (Includes proper noun)";
 
     public static void main(String[] args) {
-
-
-
-
+        System.out.println("字符为：" + SS);
         char[] as = SS.toCharArray();
         int spaceCount = 0;
         int alphabet = 0;

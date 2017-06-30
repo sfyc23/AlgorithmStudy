@@ -7,7 +7,6 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example13 {
     public static void main(String[] args) {
-
 //        做一个循环找小于100000之间的数
         for (double i = -100; i < 100000; i++) {
             //如果这个数的开方%1=0，说明这个数的开方是个整数

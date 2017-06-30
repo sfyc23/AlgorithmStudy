@@ -7,22 +7,25 @@ package com.github.sfyc23.algorithm.classicfifty
  */
 fun main(args: Array<String>) {
     for (i in 1..999) {
-        if (isPerfectNumber(i)) {
-            println(i.toString() + " 为完美数")
+        if (i.isPerfectNumber()) {
+            println("$i 为完美数\t")
         }
     }
 }
 
-fun isPerfectNumber(n: Int): Boolean {
-    var s = 0L
+/**
+ * Int 扩展函数
+ */
+fun Int.isPerfectNumber(): Boolean {
+    var s = 0
     //迭代求出所有因子之和
-    for (i in 1..n - 1) {
-        if (n.toInt() % i == 0) {
+    for (i in 1..this - 1) {
+        if (this % i == 0) {
             s += i
         }
     }
     //判断该数是否等于它的因子之和，是则是完数。
-    if (s.toInt() == n) {
+    if (s == this) {
         return true
     }
     return false

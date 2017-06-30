@@ -7,7 +7,6 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example14 {
     public static void main(String[] args) {
-
         System.out.println(getDay(2017, 6, 28));
     }
 
@@ -60,12 +59,15 @@ public class Example14 {
         if (!isLeapYear(year) && month > 2) {
             sum += 1;
         }
-
         sum += day;
-
         return sum;
     }
 
+    /**
+     * 判断是否为闰年。
+     * @param year
+     * @return
+     */
     public static boolean isLeapYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
             return true;

@@ -6,15 +6,18 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example10 {
     public static void main(String[] args) {
-        getHeight(100);
+        getHeight(100, 10);
     }
 
-    public static void getHeight(double height) {
+    public static void getHeight(double height, int count) {
+        if (count < 0 || height < 0) {
+            throw new IllegalArgumentException("请输入正确的数值");
+        }
         double sum = 0;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < count; i++) {
             sum += height;
             height = height / 2;
         }
-        System.out.println("共经过" + sum + "米。第10次反弹" + height + "米。");
+        System.out.println("共经过 " + sum + " 米。第 " + count + " 次反弹 " + height + " 米。");
     }
 }

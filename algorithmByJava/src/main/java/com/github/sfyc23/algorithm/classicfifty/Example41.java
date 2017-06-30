@@ -16,7 +16,6 @@ public class Example41 {
         }
     }
 
-
     public static boolean isMonkeyPeach(int natural){
         int lavePeach = natural;
         for (int i = 0; i <5; i++) {

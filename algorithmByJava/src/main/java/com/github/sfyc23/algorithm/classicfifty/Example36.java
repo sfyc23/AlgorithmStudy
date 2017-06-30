@@ -1,5 +1,6 @@
 package com.github.sfyc23.algorithm.classicfifty;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -8,24 +9,21 @@ import java.util.Random;
  */
 public class Example36 {
     public static void main(String[] args) {
-        System.out.println();
+//        int[] numbers = getRandomArrayInt(10);
+        Integer[] numbers = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int m = 3;
+        System.out.println("原数组："+ Arrays.toString(numbers));
 
-        int[] numbers = getRandomArrayInt(10);
-        printArray("正序：\t", numbers);
-
-        int[] newNums = moveArray(numbers, 3);
-
-        printArray("移动3位到最前之后"+"：\t", newNums);
-
+        Integer[] newNums = moveArray(numbers, m);
+        System.out.println("移动 " + m + " 位到最前之后："+ Arrays.toString(newNums));
     }
 
-    public static int[] moveArray(int[] numbers, int m) {
+    public static Integer[] moveArray(Integer[] numbers, int m) {
         if (m < 0 || m > numbers.length - 1) {// 判断移动的位置是否合法
             throw new IllegalArgumentException(" 移动位数不能大于数组个数，且不能为负数");
         }
-
-        int arrayLength = numbers.length;
-        int[] newNums = new int[arrayLength];
+        Integer arrayLength = numbers.length;
+        Integer[] newNums = new Integer[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
             if (i < m) {
                 newNums[i] = numbers[arrayLength - m + i];
@@ -34,7 +32,6 @@ public class Example36 {
             }
         }
         return newNums;
-
     }
 
     public static int[] getRandomArrayInt(int count) {
@@ -45,14 +42,4 @@ public class Example36 {
         }
         return numbers;
     }
-
-    public static void printArray(String prifix, int[] numbers) {
-        System.out.print(prifix);
-        for (int number : numbers) {
-            System.out.print(number + "\t");
-        }
-        System.out.println();
-    }
-
-
 }

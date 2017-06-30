@@ -16,10 +16,7 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example43 {
     public static void main(String[] args) {
-
         int count = 0;
-
-        // 声明由数字组成的数
         int n = 8;
         // 一位数
         count = n / 2;

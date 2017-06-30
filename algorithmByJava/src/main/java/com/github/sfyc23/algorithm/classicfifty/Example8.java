@@ -7,11 +7,13 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example8 {
     public static void main(String[] args) {
-
         System.out.println(getSum(2, 4));
     }
 
     public static long getSum(int a, int length) {
+        if (a <= 0 || a >= 10) {
+            throw new IllegalArgumentException("请输入正确的数字!");
+        }
         long num = 0;
         for (int i = 0; i < length; i++) {
             num += a * getOne(i);

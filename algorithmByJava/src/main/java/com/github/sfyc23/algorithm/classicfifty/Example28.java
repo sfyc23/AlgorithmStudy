@@ -1,5 +1,6 @@
 package com.github.sfyc23.algorithm.classicfifty;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -11,11 +12,11 @@ public class Example28 {
     public static void main(String[] args) {
 
         int[] numbers = getRandomInt();
-        printlnArray(numbers);
+        System.out.println("原数组：" + Arrays.toString(numbers));
 
-        //冒泡排序
-        bubbleSort(numbers);
-        printlnArray(numbers);
+        Arrays.sort(numbers);
+        System.out.println("排序后：" + Arrays.toString(numbers));
+//        bubbleSort(numbers);//冒泡排序
     }
 
 

@@ -8,7 +8,6 @@ package com.github.sfyc23.algorithm.classicfifty;
 public class Example18 {
     public static void main(String[] args) {
 
-
         String[] s = {"x", "y", "z"};
         for (int i = 0; i < s.length; i++) {
             for (int j = 0; j < s.length; j++) {

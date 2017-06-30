@@ -6,7 +6,6 @@ package com.github.sfyc23.algorithm.classicfifty;
  */
 public class Example38 {
     public static void main(String[] args) {
-
         if (args != null && args.length > 1) {
             String s = args[0];
             System.out.println("长度为：" + getStringLength(s));

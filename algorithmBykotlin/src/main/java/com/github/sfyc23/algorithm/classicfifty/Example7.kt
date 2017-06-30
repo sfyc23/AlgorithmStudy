@@ -8,10 +8,9 @@ package com.github.sfyc23.algorithm.classicfifty
 var SS = "Jack quietly moved up front and seized the big ball of wax. (47 letters) (Includes proper noun)"
 
 fun main(args: Array<String>) {
-    var a = false;
-    var b = 3;
-    var c = 4;
-
+    println("字符为：$SS")
+    statistics1();
+    statistics2();
 }
 
 
@@ -59,29 +58,6 @@ fun statistics2() {
             }
         }
     }
-}
-
-
-//扩展字符串中所有字符的数量，并排序输出
-fun statistics3() {
-    val `as` = SS.toCharArray()
-    val mutableCollection = `as`.groupBy {
-        when {
-            it == ' ' -> AlphabetType.SPACE
-            it >= 'a' && it <= 'z' || it >= 'A' && it < 'Z' -> AlphabetType.ALPHABET
-            it >= '0' && it <= '9' -> AlphabetType.DIGITAL
-            else -> AlphabetType.OTHER
-        }
-    }
-//            .mapTo(Map<AlphabetType,Integer>,{
-//
-//    })
-
-    val list = listOf("a", "b", "c", "d")
-    list.map {
-        it to it + ""
-    }.toMap()
-
 }
 
 

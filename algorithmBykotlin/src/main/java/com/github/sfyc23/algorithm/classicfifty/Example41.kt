@@ -24,7 +24,7 @@ fun isMonkeyPeach(natural: Int): Boolean {
             return false;
         }
         lavePeach = (lavePeach - 1) * 4 / 5
-        println(lavePeach)
+//        println(lavePeach)
     }
     return true;
 }
