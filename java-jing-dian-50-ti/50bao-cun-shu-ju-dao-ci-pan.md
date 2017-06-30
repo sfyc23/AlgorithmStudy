@@ -1,7 +1,5 @@
 【程序 50】 题目：有 5 个学生，每个学生有 3 门课的成绩，从键盘输入以上数据（包括学生号，姓名，三门课成绩），计算出平均成绩，况原有的数据和计算出的平均分数存放在磁盘文件"stud "中。
 
-
-
 用 Java 实现：
 
 ```
@@ -104,7 +102,6 @@ public static class Transcripts {
         averageScore = (score1 + score2 + score3) / 3;
     }
 }
-
 ```
 
 用 Kotlin 实现：
@@ -210,14 +207,14 @@ public static class Transcripts {
 数据已写入c盘文件stud中！
 ```
 
-文件中数据为：
+stud 文件中数据为：
 
 ```
-Transcripts{	学号: no0, 	姓名 : name0, 	语文 :2, 	数学 : 3, 	英语 : 1, 	平均成绩 : 2}
-Transcripts{	学号: no1, 	姓名 : name1, 	语文 :9, 	数学 : 7, 	英语 : 6, 	平均成绩 : 7}
-Transcripts{	学号: no2, 	姓名 : name2, 	语文 :16, 	数学 : 11, 	英语 : 11, 	平均成绩 : 12}
-Transcripts{	学号: no3, 	姓名 : name3, 	语文 :23, 	数学 : 15, 	英语 : 16, 	平均成绩 : 18}
-Transcripts{	学号: no4, 	姓名 : name4, 	语文 :30, 	数学 : 19, 	英语 : 21, 	平均成绩 : 23}
+Transcripts{    学号: no0,     姓名 : name0,     语文 :2,     数学 : 3,     英语 : 1,     平均成绩 : 2}
+Transcripts{    学号: no1,     姓名 : name1,     语文 :9,     数学 : 7,     英语 : 6,     平均成绩 : 7}
+Transcripts{    学号: no2,     姓名 : name2,     语文 :16,     数学 : 11,     英语 : 11,     平均成绩 : 12}
+Transcripts{    学号: no3,     姓名 : name3,     语文 :23,     数学 : 15,     英语 : 16,     平均成绩 : 18}
+Transcripts{    学号: no4,     姓名 : name4,     语文 :30,     数学 : 19,     英语 : 21,     平均成绩 : 23}
 ```
 
 

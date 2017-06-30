@@ -1,7 +1,6 @@
 # Summary
 
 * [介绍](README.md)
-  * 49.字符串子串
 * [Java 经典 50 题](java-jing-dian-50-ti.md)
   * [1.斐波纳契数列](java-jing-dian-50-ti/1fei-bo-na-qi-shu-lie.md)
   * [2.素数（101-200）](java-jing-dian-50-ti/2su-shu-ff08-101-200.md)
